@@ -6,6 +6,7 @@ const myRout=require('./Routs/empViewRout');
 const mongoosedb=require('./Config/mongoose');
 app.set('view engine','ejs');
 app.set('views','./Views');
+app.use(express.urlencoded())
 app.use('/',myRout);
 
 app.listen(port,function(err){

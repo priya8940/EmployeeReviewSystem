@@ -17,26 +17,22 @@ const userSchema=new mongoose.Schema({
         required:true
     },
 
-    salary:{
-        type:String,
-        required:true
-    },
-    dob:{
-        type:Date,
-        required:true
-    },
-    dept:{
-        type:String,
-        required:true
-    },
     role:{
         type:String,
         required:true
     },
-    doj:{
-        type:String,
-        required:true
-    },
+     //for review we will creat array
+     review:[
+               {
+                type:mongoose.Schema.Types.ObjectId,
+                ref:"reviewModel"
+               }
+
+         ]
+
+ },
+    {
+        timestamps:true,
 });
 const user=mongoose.model('user',userSchema);
 module.exports=user;
